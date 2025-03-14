@@ -434,11 +434,11 @@ app.get('/api/documents/:id/file', isAuthenticated, async (req, res) => {
 });
 
 
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public', 'index.html'));
+    res.sendFile(path.join(__dirname, '../client', 'index.html'));
 });
 
 app.use((err, req, res, next) => {
